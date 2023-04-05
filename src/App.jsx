@@ -65,9 +65,9 @@ function App() {
               </NavDropdown.Item>
             </NavDropdown> */}
             </Nav>
-            <Nav style={{ alignItems: 'center' }} className='d-flex'>
-              <Person color={changertext} className='me-2' size='25px' />
-              <Cart color="dark" size='21px' />
+            <Nav style={{ alignItems: 'center'}} className='d-flex'>
+              <Person className={`me-3 ${changertext}`} size='25px' />
+              <Cart className={changertext} size='21px' />
             </Nav>
           </Navbar.Collapse>
         </Container>
