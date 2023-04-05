@@ -19,22 +19,26 @@ import { useState } from 'react';
 
 function App() {
   let [state, setState] = useState(false)
-  let [color, setColor] = useState("dark")
-  console.log(state)
+  let [color, setColor] = useState("light")
+  let [text,setText] = useState('dark')
+  console.log(text)
 
 
   let handleClr = () => {
     if (color == "dark") {
-
       setColor("light")
+      setText("dark")
     }
     else {
       setColor('dark')
+      setText("light")
     }
   }
+  let changer = `bg-${color}`
+  let changertext = `text-${text}`
   return (
     <div className="App"  style={{ transition: '0.5s'}}>
-      <Navbar expand="lg" bg={color} variant="light">
+      <Navbar expand="lg" bg={color}>
         <Container>
           <Navbar.Brand href="#home"><img src='https://cdn.shopify.com/s/files/1/0027/0952/0502/files/logo_150x.png?v=1666114323' /></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -62,18 +66,18 @@ function App() {
             </NavDropdown> */}
             </Nav>
             <Nav style={{ alignItems: 'center' }} className='d-flex'>
-              <Person color={color} className='me-2' size='25px' />
+              <Person color={changertext} className='me-2' size='25px' />
               <Cart color="dark" size='21px' />
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <div  bg={color} variant="light">
+      <div className={changer}>
       <Container>
-        <Row>
+        <Row className={changertext}>
           <Col className='align-self-center' lg={6} sm={12}>
-            <h1>Crispy Chicken Burgers</h1>
+            <h1 >Crispy Chicken Burgers</h1>
             <p>Sit amet consectetur adipiscing Malesuada morbigrave ullamore alesuada nec pulvinar nisle</p>
             <button>order now</button>
           </Col>
