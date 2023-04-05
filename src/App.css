@@ -28,11 +28,23 @@
   color: #61dafb;
 }
 
+.justify{
+  justify-content: space-between;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+.App .f{
+  height: 500px !important;
+}
+@media only screen and (max-width: 600px) {
+  .App .search{
+    display: none !important;
   }
 }
